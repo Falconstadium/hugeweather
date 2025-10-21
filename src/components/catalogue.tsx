@@ -34,7 +34,7 @@ export default function Catalogue() {
             call us now
           </button>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

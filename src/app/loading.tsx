@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     // <!-- From Uiverse.io by clarencedion -->
-    <div className="flex items-center justify-center min-h-dvh">
+    <div className="flex items-center justify-center min-h-dvh bg-neutral-950">
       <div className="relative">
         <div className="relative w-32 h-32">
           <div

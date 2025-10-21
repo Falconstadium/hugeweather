@@ -11,9 +11,9 @@ export default function Testimonials() {
           Real stories from women who discovered the world
         </p>
       </div>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-12">
         <div className="grid gap-4 place-items-center">
-          <h4 className="text-lg font-semibold text-center uppercase">
+          <h4 className="md:text-lg font-semibold text-center uppercase">
             this trip changed everything i thought i knew about travel.
           </h4>
           <div className="grid gap-1 place-items-center">
@@ -31,7 +31,7 @@ export default function Testimonials() {
           </div>
         </div>
         <div className="grid gap-4 place-items-center">
-          <h4 className="text-lg font-semibold text-center uppercase">
+          <h4 className="md:text-lg font-semibold text-center uppercase">
             never felt more alive than during my huge weather adventure.
           </h4>
           <div className="grid gap-1 place-items-center">
@@ -47,7 +47,7 @@ export default function Testimonials() {
           </div>
         </div>
         <div className="grid gap-4 place-items-center">
-          <h4 className="text-lg font-semibold text-center uppercase">
+          <h4 className="md:text-lg font-semibold text-center uppercase">
             affordable luxury that exceeded all my expectations.
           </h4>
           <div className="grid gap-1 place-items-center">

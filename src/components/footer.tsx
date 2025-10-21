@@ -1,14 +1,14 @@
 export default function Footer() {
   return (
     <section className="container mx-auto py-10 px-6 grid gap-6 place-content-center place-items-center">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 place-items-center justify-center">
-        <div className="grid gap-2">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 place-items-center justify-center gap-6">
+        <div className="grid gap-2 place-items-center md:place-items-start">
           <h3 className="font-semibold text-lg">Huge Weather</h3>
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-neutral-300 text-center md:text-start">
             Your gateway to extraodinary tropical adventures at unbeatable
             prices.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,17 +61,18 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="grid gap-3">
+        <div className="grid gap-3 place-items-center md:place-items-start pt-6 md:pt-0">
           <h5 className="font-medium text-amber-600">Company</h5>
-          <div className="text-sm text-neutral-300 grid gap-1">
+          <div className="text-sm text-neutral-300 grid gap-1 text-center md:text-start">
             <p>Our Team</p>
+            <p>Destinations</p>
             <p>Blog</p>
             <p>Contact</p>
           </div>
         </div>
-        <div className="grid gap-3">
+        <div className="grid gap-3 place-items-center md:place-items-start">
           <h5 className="font-medium text-emerald-600">Support</h5>
-          <div className="text-sm text-neutral-300 grid gap-1">
+          <div className="text-sm text-neutral-300 grid gap-1 text-center md:text-start">
             <p>Help Center</p>
             <p>Booking Policy</p>
             <p>Privacy Policy</p>
