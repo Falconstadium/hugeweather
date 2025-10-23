@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <section className="container mx-auto py-10 px-6 grid gap-6 place-content-center place-items-center">
+    <section className="max-w-5xl mx-auto py-10 px-6 lg:px-0 grid gap-6 place-content-center place-items-center">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 place-items-center justify-center gap-6">
         <div className="grid gap-2 place-items-center md:place-items-start">
           <h3 className="font-semibold text-lg">Huge Weather</h3>

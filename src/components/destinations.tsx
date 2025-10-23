@@ -65,11 +65,9 @@ export default function Destinations() {
   }, []);
 
   return (
-    <section className="px-6 py-20 container mx-auto grid gap-6">
+    <section className="px-6 py-20 max-w-5xl lg:px-0 mx-auto grid gap-6">
       <div className="grid gap-4 text-center">
-        <h3
-          className=" capitalize bg-clip-text text-orange-500 font-medium"
-          id="title1">
+        <h3 className="capitalize text-orange-500 font-medium" id="title1">
           trending destinations
         </h3>
         <h3
@@ -85,7 +83,7 @@ export default function Destinations() {
 
       <div className="grid gap-6 place-items-center" id="img">
         <div
-          className="bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,0.8)),url('/heidi-kaden-kYxgm42SQso-unsplash.jpg')] bg-cover bg-center rounded w-full h-52 relative max-w-lg mx-auto origin-bottom-left"
+          className="bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,0.8)),url('/heidi-kaden-kYxgm42SQso-unsplash.jpg')] bg-cover bg-center rounded w-full h-52 relative mx-auto origin-bottom-left"
           id="place">
           <div className="p-4 grid absolute bottom-0">
             <h4 className="font-bold text-xl">Santorini</h4>

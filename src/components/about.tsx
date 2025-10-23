@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section className="container mx-auto py-20 px-6 grid gap-16">
+    <section className="max-w-5xl mx-auto py-20 px-6 lg:px-0 grid gap-16">
       <div className="grid place-items-center text-center gap-2">
         <h3 className="font-semibold text-2xl md:text-5xl capitalize bg-clip-text text-transparent bg-gradient-to-br from-emerald-400 to-green-800 font-monts">
           meet our travel experts

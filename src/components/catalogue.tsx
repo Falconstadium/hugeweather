@@ -1,6 +1,6 @@
 export default function Catalogue() {
   return (
-    <section className="container mx-auto py-20 px-6">
+    <section className="max-w-5xl mx-auto py-20 px-6 lg:px-0">
       <div className="grid place-items-center gap-6 text-center">
         <div className="grid gap-1">
           <h3 className="font-semibold text-2xl md:text-5xl capitalize font-monts">

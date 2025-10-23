@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Testimonials() {
   return (
-    <section className="container mx-auto py-20 px-6">
+    <section className="max-w-5xl mx-auto py-20 px-6 lg:px-0">
       <div className="grid place-items-center text-center gap-2 pb-10">
         <h3 className="font-semibold text-2xl md:text-5xl capitalize font-monts">
           what travelers say
