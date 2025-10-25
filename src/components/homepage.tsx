@@ -42,7 +42,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="font-sans scroll-smooth overflow-x-hidden">
+    <div className="font-sans scroll-smooth overflow-x-hidden bg-black">
       <main
         className="min-h-dvh bg-[linear-gradient(to_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.8)),url('/anders-jilden-cYrMQA7a3Wc-unsplash.jpg')] bg-no-repeat bg-cover bg-center grid grid-rows-[auto_1fr_auto] sticky top-0"
         id="hero">
@@ -54,10 +54,14 @@ export default function HomePage() {
         <Destinations />
       </main>
       <main className="sticky top-0 min-h-dvh text-neutral-100">
-        <div className="bg-gray-950" id="about">
+        <div
+          className="bg-gradient-to-br from-neutral-950 to-gray-950"
+          id="about">
           <About />
         </div>
-        <div className="bg-neutral-950" id="testimonial">
+        <div
+          className="bg-gradient-to-br from-neutral-950 to-gray-950"
+          id="testimonial">
           <Testimonials />
         </div>
         <div
@@ -65,7 +69,9 @@ export default function HomePage() {
           id="catalogue">
           <Catalogue />
         </div>
-        <div className="bg-neutral-950" id="footer">
+        <div
+          className="bg-gradient-to-br from-neutral-950 to-gray-950"
+          id="footer">
           <Footer />
         </div>
       </main>

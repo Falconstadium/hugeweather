@@ -1,14 +1,81 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
+import { useRef } from 'react';
+
 export default function Footer() {
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  const socials = useRef(null);
+
+  useGSAP(() => {
+    SplitText.create('#huge', {
+      type: 'lines, words',
+      mask: 'lines',
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          scrollTrigger: {
+            trigger: '#footer',
+            start: 'top bottom',
+          },
+          duration: 1,
+          y: -100,
+          autoAlpha: 0,
+          stagger: 0.1,
+        });
+      },
+    });
+
+    SplitText.create('#text4', {
+      type: 'lines, words',
+      mask: 'lines',
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          scrollTrigger: {
+            trigger: '#footer',
+            start: 'top bottom',
+          },
+          duration: 1,
+          y: -100,
+          autoAlpha: 0,
+          stagger: 0.1,
+          ease: 'bounce.in',
+        });
+      },
+    });
+
+    const social = gsap.timeline();
+    social.from('#social svg', {
+      y: -30,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out',
+    });
+    ScrollTrigger.create({
+      animation: social,
+      trigger: '#footer',
+      start: 'top bottom',
+    });
+  }, []);
+
   return (
     <section className="max-w-5xl mx-auto py-10 px-6 lg:px-0 grid gap-6 place-content-center place-items-center">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 place-items-center justify-center gap-6">
         <div className="grid gap-2 place-items-center md:place-items-start">
-          <h3 className="font-semibold text-lg">Huge Weather</h3>
-          <p className="text-sm text-neutral-300 text-center md:text-start">
+          <h3 className="font-semibold text-lg text-neutral-100" id="huge">
+            Huge Weather
+          </h3>
+          <p
+            className="text-sm text-neutral-300 text-center md:text-start"
+            id="text4">
             Your gateway to extraodinary tropical adventures at unbeatable
             prices.
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" id="social">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +129,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="grid gap-3 place-items-center md:place-items-start pt-6 md:pt-0">
-          <h5 className="font-medium text-amber-600">Company</h5>
-          <div className="text-sm text-neutral-300 grid gap-1 text-center md:text-start">
+          <h5 className="font-medium text-amber-600" id="huge">
+            Company
+          </h5>
+          <div
+            className="text-sm text-neutral-300 grid gap-1 text-center md:text-start"
+            id="text4">
             <p>Our Team</p>
             <p>Destinations</p>
             <p>Blog</p>
@@ -71,8 +142,12 @@ export default function Footer() {
           </div>
         </div>
         <div className="grid gap-3 place-items-center md:place-items-start">
-          <h5 className="font-medium text-emerald-600">Support</h5>
-          <div className="text-sm text-neutral-300 grid gap-1 text-center md:text-start">
+          <h5 className="font-medium text-emerald-600" id="huge">
+            Support
+          </h5>
+          <div
+            className="text-sm text-neutral-300 grid gap-1 text-center md:text-start"
+            id="text4">
             <p>Help Center</p>
             <p>Booking Policy</p>
             <p>Privacy Policy</p>
@@ -81,7 +156,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="h-0.5 w-full bg-neutral-700 mb-4"></div>
-      <div>
+      <div id="text4">
         <p className="text-sm text-neutral-300">
           &copy; 2025 Huge Weather. All rights reserved.
         </p>

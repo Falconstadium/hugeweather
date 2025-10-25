@@ -1,12 +1,106 @@
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
+
 export default function Catalogue() {
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  useGSAP(() => {
+    SplitText.create('#title5', {
+      type: 'lines, words',
+      mask: 'lines',
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          scrollTrigger: {
+            trigger: '#catalogue',
+            start: 'top center',
+            end: 'bottom 20%',
+          },
+          duration: 1,
+          y: -100,
+          autoAlpha: 0,
+          stagger: 0.1,
+        });
+      },
+    });
+    SplitText.create('#text3', {
+      type: 'lines, words',
+      mask: 'lines',
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.words, {
+          scrollTrigger: {
+            trigger: '#catalogue',
+            start: 'top center',
+            end: 'bottom 20%',
+          },
+          duration: 1,
+          y: -100,
+          autoAlpha: 0,
+          stagger: 0.1,
+        });
+      },
+    });
+
+    SplitText.create('#btn1', {
+      type: 'lines, chars',
+      mask: 'lines',
+      autoSplit: true,
+      onSplit(self) {
+        return gsap.from(self.chars, {
+          scrollTrigger: {
+            trigger: '#catalogue',
+            start: 'top center',
+            end: 'bottom 20%',
+          },
+          duration: 1,
+          y: 100,
+          autoAlpha: 0,
+          stagger: 0.1,
+        });
+      },
+    });
+
+    const tl = gsap.timeline();
+    tl.from('#btn5', {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+    });
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: '#catalogue',
+      start: 'bottom bottom',
+      end: 'bottom 20%',
+    });
+
+    const rating = gsap.timeline();
+    rating.from('#stats', {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      stagger: 0.1,
+    });
+    ScrollTrigger.create({
+      animation: rating,
+      trigger: '#catalogue',
+      start: 'bottom bottom',
+      end: 'bottom 20%',
+    });
+  });
+
   return (
     <section className="max-w-5xl mx-auto py-20 px-6 lg:px-0">
       <div className="grid place-items-center gap-6 text-center">
         <div className="grid gap-1">
-          <h3 className="font-semibold text-2xl md:text-5xl capitalize font-monts">
+          <h3
+            className="font-semibold text-2xl md:text-5xl capitalize font-monts"
+            id="title5">
             ready for your next adventure
           </h3>
-          <p className="font-medium text-neutral-300 text-sm">
+          <p className="font-medium text-neutral-300 text-sm" id="text3">
             Discover tropical destinations that will transform your travel
             experience forever.
           </p>
@@ -14,12 +108,14 @@ export default function Catalogue() {
         <div className="flex items-center gap-4">
           <button
             type="button"
-            className="bg-neutral-950 py-2 px-5 rounded-3xl transition-colors duration-200 ease-in-out hover:bg-neutral-900 capitalize text-sm font-medium">
+            className="bg-neutral-950 py-2 px-5 rounded-3xl transition-colors duration-200 ease-in-out hover:bg-neutral-900 capitalize text-sm font-medium"
+            id="btn5">
             view full catalogue
           </button>
           <button
             type="button"
-            className="border-2 border-neutral-950 py-2 px-5 rounded-3xl transition-colors duration-200 ease-in-out hover:border-transparent hover:bg-neutral-950 capitalize text-sm font-medium flex items-center gap-2">
+            className="border-2 border-neutral-950 py-2 px-5 rounded-3xl transition-colors duration-200 ease-in-out hover:border-transparent hover:bg-neutral-950 capitalize text-sm font-medium flex items-center gap-2"
+            id="btn5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -35,7 +131,7 @@ export default function Catalogue() {
           </button>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" id="stats">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -49,7 +145,7 @@ export default function Catalogue() {
             </svg>
             <span className="text-sm">4.9/5 Rating</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" id="stats">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -64,7 +160,7 @@ export default function Catalogue() {
             </svg>
             <span className="text-sm">10K+ Happy Travelers</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" id="stats">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

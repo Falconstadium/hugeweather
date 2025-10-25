@@ -15,7 +15,11 @@ export default function Destinations() {
       autoSplit: true,
       onSplit(self) {
         return gsap.from(self.words, {
-          scrollTrigger: '#title1',
+          scrollTrigger: {
+            trigger: '#desti',
+            start: 'top center',
+            end: 'bottom 80%',
+          },
           duration: 1,
           y: 100,
           autoAlpha: 0,
@@ -30,7 +34,11 @@ export default function Destinations() {
       autoSplit: true,
       onSplit(self) {
         return gsap.from(self.words, {
-          scrollTrigger: '#title2',
+          scrollTrigger: {
+            trigger: '#desti',
+            start: 'top center',
+            end: 'bottom 80%',
+          },
           duration: 1,
           y: 100,
           autoAlpha: 0,
@@ -45,7 +53,11 @@ export default function Destinations() {
       autoSplit: true,
       onSplit(self) {
         return gsap.from(self.words, {
-          scrollTrigger: '#text',
+          scrollTrigger: {
+            trigger: '#desti',
+            start: 'top center',
+            end: 'bottom 80%',
+          },
           duration: 1,
           y: 100,
           autoAlpha: 0,
@@ -56,8 +68,8 @@ export default function Destinations() {
 
     gsap.from('#place', {
       scrollTrigger: {
-        trigger: '#img',
-        start: 'top 85%',
+        trigger: '#desti',
+        start: 'top center',
       },
       width: 0,
       duration: 1,
@@ -83,7 +95,7 @@ export default function Destinations() {
 
       <div className="grid gap-6 place-items-center" id="img">
         <div
-          className="bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,0.8)),url('/heidi-kaden-kYxgm42SQso-unsplash.jpg')] bg-cover bg-center rounded w-full h-52 relative mx-auto origin-bottom-left"
+          className="bg-[linear-gradient(to_bottom,rgba(0,0,0,0),rgba(0,0,0,0.8)),url('/heidi-kaden-kYxgm42SQso-unsplash.jpg')] bg-cover bg-center rounded w-full h-52 max-w-2xl relative mx-auto origin-bottom-left"
           id="place">
           <div className="p-4 grid absolute bottom-0">
             <h4 className="font-bold text-xl">Santorini</h4>
