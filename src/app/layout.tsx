@@ -1,17 +1,6 @@
 import SmoothScrolling from '@/components/scroll';
 import type { Metadata } from 'next';
-import { DM_Sans, Montserrat } from 'next/font/google';
 import './globals.css';
-
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
-});
-
-const dmSans = DM_Sans({
-  variable: '--font-dm',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: 'Huge Weather',
@@ -25,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${montserrat.variable} antialiased`}>
+      <body className="antialiased">
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
