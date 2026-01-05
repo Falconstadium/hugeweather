@@ -1,11 +1,16 @@
+'use client';
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 export default function About() {
   gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  const avatars = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     SplitText.create('#title3', {
@@ -32,7 +37,7 @@ export default function About() {
       mask: 'lines',
       autoSplit: true,
       onSplit(self) {
-        return gsap.from(self.words, {
+        return gsap.from(self.lines, {
           scrollTrigger: {
             trigger: '#about',
             start: 'top center',
@@ -55,13 +60,25 @@ export default function About() {
       start: 'top 50%',
       end: 'bottom 80%',
     });
+
+    gsap.from(avatars.current, {
+      scrollTrigger: {
+        trigger: 'about',
+        start: 'top 30%',
+        end: 'bottom 50%',
+      },
+      duration: 1,
+      y: 50,
+      autoAlpha: 0,
+      stagger: 0.1,
+    });
   });
 
   return (
     <section className="max-w-5xl mx-auto py-20 px-6 lg:px-0 grid gap-16">
       <div className="grid place-items-center text-center gap-2">
         <h3
-          className="font-semibold text-3xl md:text-5xl capitalize text-emerald-600 font-monts"
+          className="font-bold text-3xl md:text-5xl capitalize text-emerald-600 font-gambetta"
           id="title3">
           meet our travel experts
         </h3>
@@ -70,7 +87,7 @@ export default function About() {
           experiences just for you
         </p>
       </div>
-      <div className="grid md:grid-cols-3 gap-6 md:gap-x-8">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-x-8" ref={avatars}>
         <div className="grid place-items-center text-center gap-4" id="first">
           <Image
             src={'/christopher-campbell-rDEOVtE7vOs-unsplash.jpg'}
