@@ -25,10 +25,10 @@ export default function Hero() {
         stagger: 0.5,
       });
 
-      let split = SplitText.create('#title', { type: 'words, chars' });
+      let split = SplitText.create('#text-hero', { type: 'lines' });
 
       // now animate the characters in a staggered fashion
-      gsap.from(split.chars, {
+      gsap.from(split.lines, {
         duration: 1,
         y: 100, // animate from 100px below
         autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
@@ -45,12 +45,12 @@ export default function Hero() {
         <div className="grid gap-4 text-center" ref={heroContainer}>
           <h3
             className="font-bold text-4xl md:text-6xl md:leading-13 uppercase text-neutral-100 text-shadow font-gambetta"
-            id="title">
+            id="text-hero">
             Tropical escapes that won&#39;t break the bank
           </h3>
           <p
             className="text-sm text-neutral-300 font-medium md:text-base"
-            id="desc">
+            id="text-hero">
             Discover paradise without emptying your wallet. We hunt the best
             tropical destinations for adventurous women seeking unforgettable
             experiences.
