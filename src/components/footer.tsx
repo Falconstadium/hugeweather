@@ -2,12 +2,9 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
-import { useRef } from 'react';
 
 export default function Footer() {
   gsap.registerPlugin(SplitText, ScrollTrigger);
-
-  const socials = useRef(null);
 
   useGSAP(() => {
     SplitText.create('#huge', {
