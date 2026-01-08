@@ -25,7 +25,7 @@ export default function Hero() {
         stagger: 0.5,
       });
 
-      let split = SplitText.create('#text-hero', { type: 'lines' });
+      const split = SplitText.create('#text-hero', { type: 'lines' });
 
       // now animate the characters in a staggered fashion
       gsap.from(split.lines, {
